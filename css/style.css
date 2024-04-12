@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+header a:hover{
+    color: rgb(180, 180, 180);
+    transition: 0.5s;
+}
+.row > *{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.footer-top{
+    color: white;
+    background-color: #333333;
+}
+.footer-top a{
+    color: white;
+}
+.footer-top a:hover{
+    color: rgb(180, 180, 180);
+    transition: 0.5s;
+}
+.footer-botton{
+    color: white;
+    background-color: #111111;
+}

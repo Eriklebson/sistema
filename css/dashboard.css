@@ -1,0 +1,35 @@
+body{
+    background-color: #f0f0f0 !important;
+}
+.menu-dashboar{
+    background-color: white !important;
+}
+.menu-dashboar a:hover{
+    background-color: #f8f9fa;
+}
+.fs-0{
+    font-size: 100px;
+}
+.back i{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+}
+.back i:hover{
+    box-shadow: rgba(0, 110, 255, 0.24) 0px 3px 8px;
+    background-color: #f8f9fa;
+    transition: 0.5s;
+}
+.item, .card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.item:hover{
+    box-shadow: rgba(0, 110, 255, 0.24) 0px 3px 8px;
+    background-color: #f8f9fa;
+    transition: 0.5s;
+}
+
+.row a{
+    text-decoration: none;
+}
