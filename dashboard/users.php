@@ -40,11 +40,11 @@
                 <div class="card px-4 py-2 mb-3">
                     <h3>Seach:</h3>
                     <div class="row">
-                        <form action="">
+                        <form id="search">
                             <div class="input-group my-2">
-                                <input type="text" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input type="text" id="email" name="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="submit" for="search" id="button-addon2">Search</button>
                             </div>
                         </form>
                     </div>
@@ -57,31 +57,10 @@
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Nivel</th>
+                            <th scope="col">Ações</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php 
-                                if($users->num_rows > 0){
-                                    while($row = $users->fetch_assoc()){
-                                        if($row['id'] != 1){
-                                        ?>
-                                        <tr>
-                                            <th scope="row"><?=$row['id']?></th>
-                                            <td><?=$row['name']?></td>
-                                            <td><?=$row['email']?></td>
-                                            <td><?=$row['type_account']?></td>
-                                        </tr>
-                                        <?php 
-                                        }
-                                        else{
-                                            ?><td colspan="4" class="text-center">Não tem usuarios registrados ainda</td><?php
-                                        }
-                                    }
-                                }
-                                else{
-                                    ?><td colspan="4" class="text-center">Não tem usuarios registrados ainda</td><?php
-                                }
-                            ?>
+                        <tbody class="table-body">
                         </tbody>
                     </table>
                 </div>
@@ -94,5 +73,6 @@
     <script src="https://kit.fontawesome.com/e5340aea14.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.7.1.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/users.js"></script>
 </body>
 </html>
