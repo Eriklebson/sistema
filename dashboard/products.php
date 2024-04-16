@@ -20,9 +20,14 @@
             <div class="col-md-9 p-3 overflow-auto" style="max-height: 100vh">
                 <div class="row">
                     <div class="col-md-6 px-3">
-                        <h2>Produtos</h2>
+                        <h2>Products</h2>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <a href="adduser.php?id=<?php echo $user->id?>">
+                            <div class="back text-end mb-3 mx-3">
+                            <i class="fa-solid fa-truck-ramp-box fs-3 px-3 py-2"></i>
+                            </div>
+                        </a>
                         <a href="javascript:history.back()">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
@@ -30,8 +35,31 @@
                         </a>
                     </div>
                 </div>
-                <div class="card p-2">
-                    <h1>Em breve</h1>
+                <div class="card px-4 py-2 mb-3">
+                    <h3>Seach:</h3>
+                    <div class="row">
+                        <form id="search">
+                            <div class="input-group my-2">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input type="text" id="email" name="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="submit" for="search" id="button-addon2">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card p-4">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Peço</th>
+                            <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

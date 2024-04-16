@@ -36,7 +36,12 @@ $URL_ATUAL= "$_SERVER[SCRIPT_NAME]";
     <hr>
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <?php if($user->photo == null){?>
+        <img src="../img/perfil_standart.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+        <?php }
+        else{?>
+        <img src="../storage/img/perfil/<?=$user->photo?>" alt="" width="32" height="32" class="rounded-circle me-2">
+        <?php }?>
         <strong><?php echo $user->name;?></strong>
       </a>
       <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">

@@ -26,7 +26,6 @@
                                 <td>$type_account</td>
                                 <td>
                                     <a href='edituser.php?id=$id&id_user=$user->id' class='btn btn-primary'><i class='fa-solid fa-pen-to-square'></i></a>
-                                    <button class='btn btn-danger'><i class='fa-solid fa-user-slash'></i></button>
                                 </td>
                             </tr>";
             }

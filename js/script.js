@@ -10,6 +10,7 @@ $('#login').submit(function(e){
         data: {email: email, password: password},
         dataType: 'json'
     }).done(function(result){
+        console.log(result.auth);
         if(!result.auth){
             $('.verify').show();
         }
@@ -107,3 +108,68 @@ $('#editUser').submit(function(e){
         });
     }    
 });
+
+$('#old_password').blur(function(){
+    var id = $('#id').val();
+    var old_password = $('#old_password').val();
+
+    if(old_password.length != 0 || old_password.trim()){
+        $.ajax({
+            url: '../controllers/verifypassword.php',
+            method: 'POST',
+            data: {id: id, old_password: old_password},
+            dataType: 'json'
+        }).done(function(result){
+            if(result){
+                $('.verify_password').show();
+                document.getElementById("new_password").disabled = true;
+                document.getElementById("confirm_password").disabled = true;
+                document.getElementById("saveEdit").disabled = true;
+            }
+            else{
+                console.log(result)
+                $('.verify_password').hide();
+                document.getElementById("new_password").disabled = false;
+                document.getElementById("confirm_password").disabled = false;
+                document.getElementById("saveEdit").disabled = false;
+            }
+        });
+    }
+    else{
+        $('.verify_password').hide();
+        document.getElementById("new_password").disabled = true;
+        document.getElementById("confirm_password").disabled = true;
+        document.getElementById("saveEdit").disabled = false;
+    }
+})
+
+$('#confirm_password').blur(function(){
+    var new_password = $('#new_password').val();
+    var confirm_password = $('#confirm_password').val();
+
+    if(new_password != confirm_password){
+        $('.verify_new_password').show();
+        document.getElementById("saveEdit").disabled = true;
+    }
+    else{
+        $('.verify_new_password').hide();
+        document.getElementById("saveEdit").disabled = false;
+    }
+})
+
+$('#show_password').on("change", function(e){
+    var isChecked = $(this).prop('checked');
+    console.log(isChecked);
+    if (isChecked) {
+      $("#old_password").attr("type", "text");
+      $("#new_password").attr("type", "text");
+      $("#confirm_password").attr("type", "text");
+      $("#label_show_password").html('<i class="fa-solid fa-eye-slash"></i>');
+    }
+    else{
+      $("#old_password").attr("type", "password");
+      $("#new_password").attr("type", "password");
+      $("#confirm_password").attr("type", "text");
+      $("#label_show_password").html('<i class="fa-solid fa-eye"></i>');
+    }
+  })

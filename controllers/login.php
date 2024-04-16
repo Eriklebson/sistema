@@ -10,7 +10,7 @@
     $user = $conn->query("select * from users where email='$email'")->fetch_object();
     
     if(empty($user->id)){
-        echo json_encode(array('auth'=>true));
+        echo json_encode(array('auth'=>false));
     }
     else{
         if($user->password == $password){
@@ -19,7 +19,7 @@
             echo json_encode(array('auth'=>true, 'id'=>$user->id));
         }
         else{
-            echo json_encode(array('auth'=>true));
+            echo json_encode(array('auth'=>false));
         }
     }
 ?>

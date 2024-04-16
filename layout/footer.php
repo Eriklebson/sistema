@@ -8,7 +8,7 @@
     </div>
     <div class="container-fluid footer-botton">
         <div class="container text-center py-2">
-            <p>&copy; 2024 sistema. Configurado Por CloudBoo</p>
+            <p>&copy; 2024 sistema. Configurado Por Eriklebson</p>
         </div>
     </div>
 </footer>
