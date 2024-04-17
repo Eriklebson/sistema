@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Add User</title>
 </head>
 <body>
@@ -34,10 +34,10 @@
                     <form id="registerUser">
                         <div class="row">
                             <div class="col-md-12 p-2">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Name" require>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
                             </div>
                             <div class="col-md-12 p-2">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" require>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                                 <p class="verify_email text-danger mb-0 px-2" style="display: none;">Email ja cadastrado</p>
                             </div>
                             <div class="col-md-12 p-2">
@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-md-12 p-2">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="password" id="password" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2" require>
+                                    <input type="text" class="form-control" name="password" id="password" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                                     <button class="btn btn-outline-secondary" id="getPassword" type="button">Generate</button>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <p class="input_null text-danger" style="display: none;">Tem campos vazios</p>
                             </div>
                             <div class="col-md-6 p-2 text-end">
-                                <button type="submit" form="registerUser" class="btn btn-primary">Save</button>
+                                <button type="submit" for="registerUser" class="btn btn-primary">Save</button>
                             </div>
                         </div>
                     </form>
@@ -66,9 +66,7 @@
             </div>
         </div>
     </div>
-    <script src="../bootstrap/js/bootstrap.js"></script>
-    <script src="../bootstrap/js/bootstrap.esm.js"></script>
-    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e5340aea14.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.7.1.js"></script>
     <script src="../js/script.js"></script>

@@ -111,7 +111,7 @@ $('#editUser').submit(function(e){
 
 $('#old_password').blur(function(){
     var id = $('#id').val();
-    var old_password = $('#old_password').val();
+    var old_password = $(this).val();
 
     if(old_password.length != 0 || old_password.trim()){
         $.ajax({
@@ -145,7 +145,7 @@ $('#old_password').blur(function(){
 
 $('#confirm_password').blur(function(){
     var new_password = $('#new_password').val();
-    var confirm_password = $('#confirm_password').val();
+    var confirm_password = $(this).val();
 
     if(new_password != confirm_password){
         $('.verify_new_password').show();
@@ -172,4 +172,4 @@ $('#show_password').on("change", function(e){
       $("#confirm_password").attr("type", "text");
       $("#label_show_password").html('<i class="fa-solid fa-eye"></i>');
     }
-  })
+})

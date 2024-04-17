@@ -29,3 +29,8 @@ header a:hover{
     color: white;
     background-color: #111111;
 }
+
+#previewContainer img{
+    max-width: 200px;
+    max-height: 200px;
+}
