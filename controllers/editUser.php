@@ -1,6 +1,5 @@
 <?php
     header('Content-Type: application/json');
-
     include 'conn.php';
 
     $id = $_POST['id'];

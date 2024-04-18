@@ -11,19 +11,25 @@ $URL_ATUAL= "$_SERVER[SCRIPT_NAME]";
       <li class="nav-item">
         <a href="index.php?id=<?php echo $user->id?>" class="nav-link <?php if($URL_ATUAL == '/sistema/dashboard/index.php'){ echo 'active';} else {echo 'link-dark';}?>" aria-current="page">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="category.php?id=<?php echo $user->id?>" class="nav-link <?php if($URL_ATUAL == '/sistema/dashboard/category.php'){ echo 'active';} else {echo 'link-dark';}?>">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          Categorias
         </a>
       </li>
       <li>
         <a href="products.php?id=<?php echo $user->id?>" class="nav-link <?php if($URL_ATUAL == '/sistema/dashboard/products.php'){ echo 'active';} else {echo 'link-dark';}?>">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Products
+          Produtos
         </a>
       </li>
       <li>
         <a href="users.php?id=<?php echo $user->id?>" class="nav-link <?php if($URL_ATUAL == '/sistema/dashboard/users.php'){ echo 'active';} else {echo 'link-dark';}?>">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Users
+          Usuarios
         </a>
       </li>
       <li>
@@ -45,7 +51,7 @@ $URL_ATUAL= "$_SERVER[SCRIPT_NAME]";
         <strong><?php echo $user->name;?></strong>
       </a>
       <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-        <li><a class="dropdown-item" href="settings.php?id=<?php echo $user->id?>">Settings</a></li>
+        <li><a class="dropdown-item" href="settings.php?id=<?php echo $user->id?>">Configurações</a></li>
         <li><hr class="dropdown-divider"></li>
         <li>
             <form action="../controllers/singout.php?id=<?php echo $user->id?>" method="post">

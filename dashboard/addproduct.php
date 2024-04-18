@@ -1,5 +1,7 @@
 <?php 
     include '../controllers/auth.php';
+
+    $categorys = $conn->query('select * from type_product order by name ASC');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -33,9 +35,25 @@
                 <div class="card p-4">
                     <form action="../controllers/addproduct.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
+                            <div class="col-md-12" hidden>
+                                <input type="text" class="form-control" name="id_user" id="id_user" placeholder="id_user" value="<?=$_GET['id']?>" required>
+                            </div>
                             <div class="col-md-12 p-2">
                                 <label for="formFileMultiple" class="form-label">Imagens</label>
                                 <input class="form-control" type="file" id="imagens" name="imagens[]" multiple required>
+                            </div>
+                            <div class="col-md-12 p-2">
+                                <select class="form-select" name="category" aria-label="Default select example">
+                                <?php 
+                                if($result = $categorys){
+                                    while($category = $result->fetch_object()){
+                                        ?>
+                                        <option value="<?=$category->id?>"><?=$category->name?></option>
+                                        <?php    
+                                    }
+                                }
+                                ?>
+                                </select>
                             </div>
                             <div class="col-md-12 p-2">
                                 <input type="text" class="form-control" name="title" id="title" placeholder="Title" required>

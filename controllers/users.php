@@ -4,7 +4,7 @@
 
     $id = $_POST['id'];
 
-    $users = $conn->query("select * from users;");
+    $users = $conn->query("select * from users order by id ASC;");
 
     $response = "";
 

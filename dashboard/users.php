@@ -1,7 +1,5 @@
 <?php 
     include '../controllers/auth.php';
-
-    $users = $conn->query("select * from users");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

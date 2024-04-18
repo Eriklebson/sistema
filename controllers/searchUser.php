@@ -7,7 +7,7 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
 
-    $users = $conn->query("select * from users where name like '%$name%' and email like '%$email%';");
+    $users = $conn->query("select * from users where name like '%$name%' and email like '%$email%' order by id ASC;");
     
     $response = "";
 

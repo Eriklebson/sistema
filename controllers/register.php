@@ -1,6 +1,5 @@
 <?php
     header('Content-Type: application/json');
-
     include 'conn.php';
 
     $name = $_POST['name'];
