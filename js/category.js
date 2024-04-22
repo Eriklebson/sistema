@@ -37,7 +37,7 @@ $('#addcategory').submit(function(e){
             if(result){
                 $('.success').show();
                 $('.error').hide();
-                $('#name').val("");
+                $('#category').val("");
             }
             else{
                 $('.error').show();

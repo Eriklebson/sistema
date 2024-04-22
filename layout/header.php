@@ -14,7 +14,20 @@
                         <a class="px-2" href="index.php">Home</a>
                         <a class="px-2" href="about.php">About</a>
                         <a class="px-2" href="contact.php">Contact</a>
-                        <a class="px-2" href="dashboard/login.php">Login</a>
+                        <?php if(!isset($_COOKIE['login_key'])){?>
+                            <a class="px-2" href="dashboard/login.php">Login</a>
+                        <?php }else{
+                            $login_key = $_COOKIE['login_key'];
+                            $user = $conn->query("select * from users where login_key='$login_key'")->fetch_object();
+                            if(isset($user)){?>
+                                <a class="px-2" href="dashboard/index.php?id=<?=$user->id?>">DashBoard</a>
+                                <?php }
+                                else{
+                                    ?><a class="px-2" href="dashboard/login.php">Login</a><?php
+                                }
+                            ?>
+
+                        <?php }?>
                     </div>
                 </div>
             </nav>

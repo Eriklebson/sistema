@@ -30,7 +30,17 @@ header a:hover{
     background-color: #111111;
 }
 
-#previewContainer img{
-    max-width: 200px;
-    max-height: 200px;
+.card-index img{
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.indicadores button{
+    opacity: 0.5;
+    border: none;
+}
+.indicadores .active{
+    opacity: 1 !important;
+    border: none;
 }

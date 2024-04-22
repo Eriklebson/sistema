@@ -85,7 +85,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e5340aea14.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../js/jquery.mask.js"></script>
+    <script src="../js/products.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>

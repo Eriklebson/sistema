@@ -2,12 +2,12 @@ $(document).ready(function(){
     const params = new URLSearchParams(window.location.search);
     var id = params.get('id');
     $.ajax({
-        url: '../controllers/products.php',
+        url: 'controllers/productindex.php',
         data: {id: id},
         method: 'POST',
         dataType: 'json'
     }).done(function(result){
-        $(".table-body").html(result)
+        $(".product").html(result)
     });
 });
 $('#search').submit(function(e){

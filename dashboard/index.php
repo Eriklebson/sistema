@@ -29,6 +29,15 @@
                             </a>
                         </div>
                         <div class="col-md-6">
+                            <a href="category.php?id=<?php echo $user->id?>">
+                                <div class="card text-center p-5 m-3 item d-flex justify-content-center">
+                                    <i class="fa-solid fa-sitemap fs-0"></i>
+                                    <p class="fs-2 mt-2">Categorias</p>
+                                </div>
+                            </a>
+                        </div>
+                        <?php if($user->type_account == 1){?>
+                        <div class="col-md-6">
                             <a href="users.php?id=<?php echo $user->id?>">
                                 <div class="card text-center p-5 m-3 item d-flex justify-content-center">
                                     <i class="fa-solid fa-users fs-0"></i>
@@ -36,14 +45,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-6">
-                            <a href="theme.php?id=<?php echo $user->id?>">
-                                <div class="card text-center p-5 m-3 item d-flex justify-content-center">
-                                    <i class="fa-brands fa-themeisle fs-0"></i>
-                                    <p class="fs-2 mt-2">Thema Site</p>
-                                </div>
-                            </a>
-                        </div>
+                        <?php }?>
                         <div class="col-md-6">
                             <a href="settings.php?id=<?php echo $user->id?>">
                                 <div class="card text-center p-5 m-3 item d-flex justify-content-center">

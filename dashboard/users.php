@@ -1,5 +1,9 @@
 <?php 
     include '../controllers/auth.php';
+
+    if($user->type_account != 1){
+        header("Location: ../dashboard/index.php?id=$user->id");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

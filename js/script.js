@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    $('#price').mask("#.##0,00", {reverse: true});
+});
 $('#login').submit(function(e){
     e.preventDefault();
     
@@ -109,6 +112,40 @@ $('#editUser').submit(function(e){
     }    
 });
 
+$('#editProduct').submit(function(e){
+    e.preventDefault();
+
+    var id_product = $('#id_product').val();
+    var type = $('#type').val();
+    var title = $('#title').val();
+    var subtitle = $('#subtitle').val();
+    var price = $('#price').val();
+    var description = $('#description').val();
+
+    console.log(type);
+
+    if(title.length === 0 || !title.trim() || subtitle.length === 0 || !subtitle.trim() || description.length === 0 || !description.trim()){
+        $('.input_null').show();
+    }
+    else{
+        $.ajax({
+            url: '../controllers/editProduct.php',
+            method: 'POST',
+            data: {id_product: id_product ,type: type, title: title, subtitle: subtitle, price: price, description: description},
+            dataType: 'json'
+        }).done(function(result){
+            console.log(result);
+            if(!result){
+                $('.error').show();
+            }
+            else{
+                $('.success').show();
+                $('#password').val("");
+            }
+        });
+    }    
+});
+
 $('#old_password').blur(function(){
     var id = $('#id').val();
     var old_password = $(this).val();
@@ -173,3 +210,10 @@ $('#show_password').on("change", function(e){
       $("#label_show_password").html('<i class="fa-solid fa-eye"></i>');
     }
 })
+
+$('#photos').sortable({
+    update: function(){
+        var list = $(this).sortable('toArray');
+        $.post("../controllers/orderImagens.php", {imagens:list});
+    }
+});

@@ -1,5 +1,8 @@
 <?php 
     include '../controllers/auth.php';
+    if($user->type_account != 1){
+        header("Location: ../dashboard/index.php?id=$user->id");
+    }
 
     $id_user = $_GET['id_user'];
     $user_edit = $conn->query("select * from users where id=$id_user;")->fetch_object();

@@ -1,5 +1,6 @@
 <?php 
     include '../controllers/auth.php';
+    $categorys = $conn->query('select * from type_product order by name ASC');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Products</title>
+    <title>Produtos</title>
 </head>
 <body>
     <div class="container-fluid">
@@ -20,7 +21,7 @@
             <div class="col-md-9 p-3 overflow-auto" style="max-height: 100vh">
                 <div class="row">
                     <div class="col-md-6 px-3">
-                        <h2>Products</h2>
+                        <h2>Produtos</h2>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
                         <a href="addproduct.php?id=<?php echo $user->id?>">
@@ -36,25 +37,45 @@
                     </div>
                 </div>
                 <div class="card px-4 py-2 mb-3">
-                    <h3>Seach:</h3>
+                    <h3>Procurar:</h3>
                     <div class="row">
                         <form id="search">
                             <div class="input-group my-2">
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Title" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <input type="text" id="price" name="price" class="form-control" placeholder="Price" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Titulo" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input type="text" id="price" name="price" class="form-control" placeholder="Preço" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <select class="form-select" name="category" id="category" aria-label="Default select example">
+                                    <option value="">Escolha</option>
+                                <?php 
+                                if($result = $categorys){
+                                    while($category = $result->fetch_object()){
+                                        ?>
+                                        <option value="<?=$category->id?>"><?=$category->name?></option>
+                                        <?php    
+                                    }
+                                }
+                                ?>
+                                </select>
                                 <button class="btn btn-outline-secondary" type="submit" for="search" id="button-addon2">Search</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="card p-4">
+                    <?php if(isset($_GET['msg'])){
+                        if($_GET['msg'] == 'true'){?>
+                            <p class="text-success text-center fs-4">Produto cadastrado com sucesso</p>
+                    <?php }
+                        else{?>
+                            <p class="text-danger text-center fs-4">Não foi possivel cadastrado o Produto</p>
+                    <?php }}?>
                     <table class="table table-hover">
                         <thead>
                             <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Peço</th>
-                            <th scope="col">Ações</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col" class="text-center">Ações</th>
                             </tr>
                         </thead>
                         <tbody class="table-body">
