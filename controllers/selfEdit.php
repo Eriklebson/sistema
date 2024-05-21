@@ -24,6 +24,7 @@
                 if($new_password == $confirm_password){
                     $password = hash('sha256', md5($new_password));
                     $conn->query("update users set photo='$namePhoto', name='$name', password='$password' where id='$id'");
+                    header("Location: ../dashboard/settings.php?id=$id");
                 }
                 else{
                     echo "Password confirmation must be the same as the new password";
@@ -35,6 +36,7 @@
         }
         else{
             $conn->query("update users set photo='$namePhoto', name='$name' where id='$id'");
+            header("Location: ../dashboard/settings.php?id=$id");
         }
     }
     else{
@@ -46,6 +48,7 @@
                 }
                 else{
                     echo "Password confirmation must be the same as the new password";
+                    header("Location: ../dashboard/settings.php?id=$id");
                 }
             }
             else{
@@ -53,10 +56,8 @@
             }
         }
         else{
-            echo $name, "<br>";
-            echo "update users set name='$name' where id='$id'";
             $conn->query("update users set name='$name' where id='$id'");
-
+            header("Location: ../dashboard/settings.php?id=$id");
             echo mysqli_error($conn);
         }
     }
