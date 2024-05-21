@@ -7,9 +7,14 @@
     $title = $_POST['title'];
     $subtitle = $_POST['subtitle'];
     $price = str_replace(',','.', str_replace('.', '', $_POST['price']));
+    $link = $_POST['link'];
     $description = $_POST['description'];
+
+    if(empty($link)){
+        $link = null;
+    }
     
-    $result = $conn->query("update products set type='$type', title='$title', subtitle='$subtitle', price='$price', description='$description' where id='$id_product';");
+    $result = $conn->query("update products set type='$type', title='$title', subtitle='$subtitle', price='$price', link='$link', description='$description' where id='$id_product';");
 
     if($result){
         echo json_encode(true);

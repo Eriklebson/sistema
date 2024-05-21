@@ -58,6 +58,9 @@
             <div class="col-md-8 px-5">
                 <h2><?=$product->title?></h2>
                 <h3>Preço R$ <?=number_format($product->price, 2, ',', '.');?></h3>
+                <?php if(!empty($product->link)){?>
+                <a href="<?=$product->link?>" class="btn btn-primary mt-3 px-5 py-2 fs-3" target="_blank">Comprar</a>
+                <?php }?>
                 <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active fs-4" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Descrição</button>

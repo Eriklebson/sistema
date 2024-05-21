@@ -129,6 +129,7 @@ $('#editProduct').submit(function(e){
     var title = $('#title').val();
     var subtitle = $('#subtitle').val();
     var price = $('#price').val();
+    var link = $('#link').val();
     var description = $('#description').val();
 
     if(title.length === 0 || !title.trim() || subtitle.length === 0 || !subtitle.trim() || description.length === 0 || !description.trim()){
@@ -138,7 +139,7 @@ $('#editProduct').submit(function(e){
         $.ajax({
             url: '../controllers/editproduct.php',
             method: 'POST',
-            data: {id_product: id_product ,type: type, title: title, subtitle: subtitle, price: price, description: description},
+            data: {id_product: id_product ,type: type, title: title, subtitle: subtitle, price: price, link: link, description: description},
             dataType: 'json'
         }).done(function(result){
             if(!result){

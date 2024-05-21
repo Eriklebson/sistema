@@ -65,11 +65,14 @@
                                 <input type="text" class="form-control" name="price" id="price" placeholder="Price" required>
                             </div>
                             <div class="col-md-12 p-2">
+                                <input type="text" class="form-control" name="link" id="link" placeholder="Link de venda">
+                            </div>
+                            <div class="col-md-12 p-2">
                                 <textarea name="description" id="description" class="form-control" rows="10" placeholder="Description" required></textarea>
                             </div>
                             <div class="col-md-6 p-2">
                                 <p class="success text-success" style="display: none;">Cadastrado com sucesso</p>
-                                <p class="error text-danger" style="display: none;">Desculpe n„o foi possivel cadastrar o usuario, por favor entre em contato com o responsavel do sistema</p>
+                                <p class="error text-danger" style="display: none;">Desculpe n√£o foi possivel cadastrar o usuario, por favor entre em contato com o responsavel do sistema</p>
                                 <p class="input_null text-danger" style="display: none;">Tem campos vazios</p>
                             </div>
                             <div class="col-md-6 p-2 text-end">

@@ -45,10 +45,10 @@
                 if($new_password == $confirm_password){
                     $password = hash('sha256', md5($new_password));
                     $conn->query("update users set name='$name', password='$password' where id='$id'");
+                    header("Location: ../dashboard/settings.php?id=$id");
                 }
                 else{
                     echo "Password confirmation must be the same as the new password";
-                    header("Location: ../dashboard/settings.php?id=$id");
                 }
             }
             else{

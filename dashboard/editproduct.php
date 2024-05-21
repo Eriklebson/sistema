@@ -63,6 +63,9 @@
                                 <input type="text" class="form-control" name="price" id="price" value="<?=number_format($product_edit->price, 2, ',', '')?>" placeholder="Price" require>
                             </div>
                             <div class="col-md-12 p-2">
+                                <input type="text" class="form-control" name="link" id="link" placeholder="Link de venda" value="<?=$product_edit->link?>">
+                            </div>
+                            <div class="col-md-12 p-2">
                                 <textarea name="description" id="description" class="form-control" rows="10" placeholder="Description" required><?=$product_edit->description?></textarea>
                             </div>
                             <div class="col-md-6 p-2">

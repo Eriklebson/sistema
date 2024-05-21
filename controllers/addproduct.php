@@ -7,9 +7,10 @@
     $title = $_POST['title'];
     $subtitle = $_POST['subtitle'];
     $price = str_replace(',','.', str_replace('.', '', $_POST['price']));
+    $link = $_POST['link'];
     $description = $_POST['description'];
 
-    if($conn->query("insert into products (type, title, subtitle, price, description, sold) values ('$type','$title', '$subtitle', '$price', '$description', 0);")){
+    if($conn->query("insert into products (type, title, subtitle, price, link, description, sold) values ('$type','$title', '$subtitle', '$price', '$link', '$description', 0);")){
         header('Location: ../dashboard/products.php?id='.$id_user.'&msg=true');
     }
     else{
