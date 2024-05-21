@@ -30,10 +30,19 @@ header a:hover{
     background-color: #111111;
 }
 
+.card-index{
+    min-height: 446px;
+}
+
 .card-index img{
-    height: 350px;
+    height: 250px;
     object-fit: cover;
     object-position: center;
+}
+
+.menu{
+    height: 100%;
+    background-color: #f3f3f3;
 }
 
 .indicadores button{
@@ -43,4 +52,44 @@ header a:hover{
 .indicadores .active{
     opacity: 1 !important;
     border: none;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+.menu a:hover{
+    color: #6e6e6e;
+    transition: 0.5s;
+}
+
+.moldura{
+    color: white;
+    padding: 10px;
+    background-color: #9b2020;
+    border-radius: 10px;
+}
+footer a{
+    text-decoration: none;
+    color: #f3f3f3;
+}
+footer a:hover{
+    color: #dadada;
+    transition: 0.5s;
+}
+
+.whatsapp{
+    color: white;
+    bottom: 10px;
+    left: 30px;
+    font-size: 50px;
+    background-color: #4BCA5B;
+}
+.whatsapp:hover{
+    background-color: #28aa39;
+    transition: 0.5s;
+}
+
+.voltar{
+    bottom: 10px;
+    right: 10px;
 }

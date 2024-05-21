@@ -26,8 +26,8 @@
                     <div class="col-md-9 px-3">
                         <h2>Editar produto <?=$product_edit->title?></h2>
                     </div>
-                    <div class="col-md-3">
-                        <a href="javascript:history.back()">
+                    <div class="col-md-3 d-flex justify-content-end">
+                        <a href="javascript:history.back()" data-bs-toggle="tooltip" data-bs-title="Voltar">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
                             </div>
@@ -60,7 +60,7 @@
                                 </select>
                             </div>
                             <div class="col-md-12 p-2">
-                                <input type="text" class="form-control" name="price" id="price" value="<?=$product_edit->price?>" placeholder="Price" require>
+                                <input type="text" class="form-control" name="price" id="price" value="<?=number_format($product_edit->price, 2, ',', '')?>" placeholder="Price" require>
                             </div>
                             <div class="col-md-12 p-2">
                                 <textarea name="description" id="description" class="form-control" rows="10" placeholder="Description" required><?=$product_edit->description?></textarea>

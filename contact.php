@@ -15,23 +15,31 @@ include 'controllers/conn.php';
         include 'layout/header.php';
     ?>
     <div class="container py-5">
-        <h3>Contact</h3>
         <div class="row">
             <div class="col-md-6">
-                <h3>lorem ipsum</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, nam? Voluptas dolorem a amet mollitia minima alias eaque, enim doloremque libero eius praesentium illum, repudiandae aperiam modi deserunt veniam assumenda?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur delectus nemo iste, illo adipisci eius magnam explicabo praesentium numquam. Earum enim sint voluptas itaque rem iure error obcaecati voluptates in?</p>
+                <h3>Entre em Contato</h3>
+                <p>Estamos aqui para ajudar! Não hesite em nos contatar para qualquer dúvida ou consulta. Estamos disponíveis por telefone, WhatsApp, e-mail ou em nosso endereço comercial.</p>
+                <h3 class="mt-5">Informações de Contato:</h3>
+                <p>Telefone: (11) 9 8748-8327</p>
+                <p>WhatsApp: (11) 9 8748-8327</p>
+                <p>E-mail: cloudboo@cloudboo.com</p>
+                <p>Endereço: Avenida Atlântica, 406 - Socorro/Interlagos,Zona Sul de São Paulo CEP: 04768-000 - Dentro do Posto Shell</p>
+                <h4>Horário de Atendimento:</h4>
+                <p>Segunda a Sexta: 09:00 as 18:00</p>
+                <p>Sábado: 09:00 as 13:00</p>
+                <p>Domingo: Fechado</p>
+                <p></p>
             </div>
             <div class="col-md-6">
                 <div class="card p-3">
                     <h3 class="text-center mb-3">Lorem ipsum</h3>
                     <form action="">
-                        <input class="form-control mb-3" type="text" placeholder="Name">
+                        <input class="form-control mb-3" type="text" placeholder="Nome">
                         <input class="form-control mb-3" type="text" placeholder="Email">
-                        <input class="form-control mb-3" type="text" placeholder="Phone">
-                        <textarea class="form-control mb-3" name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                        <input class="form-control mb-3" type="text" placeholder="Telefone">
+                        <textarea class="form-control mb-3" name="" id="" cols="30" rows="10" placeholder="Mensagem"></textarea>
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
                     </form>
                 </div>

@@ -24,12 +24,12 @@
                         <h2>Produtos</h2>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a href="addproduct.php?id=<?php echo $user->id?>">
+                        <a href="addproduct.php?id=<?php echo $user->id?>" data-bs-toggle="tooltip" data-bs-title="Adicionar produto">
                             <div class="back text-end mb-3 mx-3">
-                            <i class="fa-solid fa-truck-ramp-box fs-3 px-3 py-2"></i>
+                            <i class="fa-solid fa-plus fs-3 px-3 py-2"></i>
                             </div>
                         </a>
-                        <a href="javascript:history.back()">
+                        <a href="javascript:history.back()" data-bs-toggle="tooltip" data-bs-title="Voltar">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
                             </div>
@@ -41,10 +41,10 @@
                     <div class="row">
                         <form id="search">
                             <div class="input-group my-2">
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Titulo" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Nome" aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <input type="text" id="price" name="price" class="form-control" placeholder="Preço" aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <select class="form-select" name="category" id="category" aria-label="Default select example">
-                                    <option value="">Escolha</option>
+                                <option value="">Escolha</option>
                                 <?php 
                                 if($result = $categorys){
                                     while($category = $result->fetch_object()){
@@ -55,7 +55,7 @@
                                 }
                                 ?>
                                 </select>
-                                <button class="btn btn-outline-secondary" type="submit" for="search" id="button-addon2">Search</button>
+                                <button class="btn btn-outline-secondary" type="submit" for="search" id="button-addon2">Procurar</button>
                             </div>
                         </form>
                     </div>
@@ -72,7 +72,7 @@
                         <thead>
                             <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">Nome</th>
                             <th scope="col">Peço</th>
                             <th scope="col">Tipo</th>
                             <th scope="col" class="text-center">Ações</th>
@@ -88,6 +88,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e5340aea14.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../js/jquery.mask.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/products.js"></script>
 </body>

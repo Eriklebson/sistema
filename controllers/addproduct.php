@@ -6,14 +6,14 @@
     $type = $_POST['category'];
     $title = $_POST['title'];
     $subtitle = $_POST['subtitle'];
-    $price = $_POST['price'];
+    $price = str_replace(',','.', str_replace('.', '', $_POST['price']));
     $description = $_POST['description'];
 
-    if($conn->query("insert into products (type, title, subtitle, price, description) values ('$type','$title', '$subtitle', '$price', '$description');")){
-        echo "Produto cadastrado com sucesso </br>";
+    if($conn->query("insert into products (type, title, subtitle, price, description, sold) values ('$type','$title', '$subtitle', '$price', '$description', 0);")){
+        header('Location: ../dashboard/products.php?id='.$id_user.'&msg=true');
     }
     else{
-        echo "Não foi possivel cadastrar o Produto </br>";
+        header('Location: ../dashboard/products.php?id='.$id_user.'&msg=true');
     }
     
 
@@ -25,8 +25,6 @@
         $direct = "../storage/img/products/".$id_product."/".$name;
         $largura =  getimagesize($photos['tmp_name'][$i])[0];
         $altura =  getimagesize($photos['tmp_name'][$i])[1];
-        echo $largura, "\n\r";
-        echo $altura, "\n\r";
         if($largura > 2000 || $altura > 2000){
             $image_redimencionada = imagecreatetruecolor(floor($largura/3), floor($altura/3));
             imagecopyresampled($image_redimencionada, imagecreatefromjpeg($photos['tmp_name'][$i]), 0,0,0,0, floor($largura/3), floor($altura/3), $largura, $altura);

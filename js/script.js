@@ -1,5 +1,14 @@
+function tolltips(){
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+}
+setTimeout(function(){
+    tolltips()
+}, 600);
 $(document).ready(function(){
     $('#price').mask("#.##0,00", {reverse: true});
+    $('#price_in').mask("#.##0,00", {reverse: true});
+    $('#price_to').mask("#.##0,00", {reverse: true});
 });
 $('#login').submit(function(e){
     e.preventDefault();
@@ -122,19 +131,16 @@ $('#editProduct').submit(function(e){
     var price = $('#price').val();
     var description = $('#description').val();
 
-    console.log(type);
-
     if(title.length === 0 || !title.trim() || subtitle.length === 0 || !subtitle.trim() || description.length === 0 || !description.trim()){
         $('.input_null').show();
     }
     else{
         $.ajax({
-            url: '../controllers/editProduct.php',
+            url: '../controllers/editproduct.php',
             method: 'POST',
             data: {id_product: id_product ,type: type, title: title, subtitle: subtitle, price: price, description: description},
             dataType: 'json'
         }).done(function(result){
-            console.log(result);
             if(!result){
                 $('.error').show();
             }
@@ -206,7 +212,7 @@ $('#show_password').on("change", function(e){
     else{
       $("#old_password").attr("type", "password");
       $("#new_password").attr("type", "password");
-      $("#confirm_password").attr("type", "text");
+      $("#confirm_password").attr("type", "password");
       $("#label_show_password").html('<i class="fa-solid fa-eye"></i>');
     }
 })
@@ -217,3 +223,28 @@ $('#photos').sortable({
         $.post("../controllers/orderImagens.php", {imagens:list});
     }
 });
+
+function sold_product(id_product){
+    $.ajax({
+        url: '../controllers/soldProduct.php',
+        method: 'POST',
+        data: {id_product: id_product},
+        dataType: 'json'
+    }).done(function(result){
+        if(result.vefiry){
+            if(result.button == 0){
+                $('#button_product').removeClass('btn-warning').addClass("btn-success").html("<i class='fa-solid fa-cubes-stacked'></i>").attr('data-bs-title', 'Colocar a Venda');
+                $(".tooltip").remove();
+                tolltips();
+            }
+            else{
+                $('#button_product').removeClass('btn-success').addClass("btn-warning").html("<i class='fa-solid fa-cart-flatbed'></i>").attr('data-bs-title', 'Marcar como Vendido');
+                $(".tooltip").remove();
+                tolltips();
+            }
+        }
+        else{
+            console.log("Consulte os suporte tecnico");
+        }
+    });
+}

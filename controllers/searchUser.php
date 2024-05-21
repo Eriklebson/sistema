@@ -25,7 +25,7 @@
                                 <td>$user->email</td>
                                 <td>$type_account</td>
                                 <td>
-                                    <a href='edituser.php?id=$id&id_user=$user->id' class='btn btn-primary'><i class='fa-solid fa-pen-to-square'></i></a>
+                                    <a href='edituser.php?id=$id&id_user=$user->id' class='btn btn-primary'><i class='fa-solid fa-pen-to-square' data-bs-toggle='tooltip' data-bs-title='Editar Usuario'></i></a>
                                 </td>
                             </tr>";
             }

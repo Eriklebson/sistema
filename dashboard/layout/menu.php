@@ -58,11 +58,11 @@ $URL_ATUAL= "$_SERVER[SCRIPT_NAME]";
         <strong><?php echo $user->name;?></strong>
       </a>
       <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-        <li><a class="dropdown-item" href="settings.php?id=<?php echo $user->id?>">Configurações</a></li>
+        <li><a class="dropdown-item" href="settings.php?id=<?php echo $user->id?>">ConfiguraÃ§Ãµes da Conta</a></li>
         <li><hr class="dropdown-divider"></li>
         <li>
             <form action="../controllers/singout.php?id=<?php echo $user->id?>" method="post">
-                <input class="dropdown-item" type="submit" id="singout" value="Sign out">
+                <input class="dropdown-item" type="submit" id="singout" value="Sair">
             </form>
         </li>
       </ul>

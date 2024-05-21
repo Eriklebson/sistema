@@ -3,17 +3,16 @@
     header('Content-Type: application/json');
     include 'conn.php';
 
-
-    $link = $_SERVER['HTTP_HOST'];
     $categoria = $_POST['categoria'];
+    $title = $_POST['title'];
+
     $categorys = $conn->query('select * from type_product order by name ASC');
 
     if($categoria == null){
-        $products = $conn->query("select * from products where sold=0 order by id DESC;");
+        $products = $conn->query("select * from products where sold=0 and title like '%$title%' order by id ASC;");
     }
     else{
-        $products = $conn->query("select * from products where type='$categoria' and sold=0 order by id DESC;");
-        
+        $products = $conn->query("select * from products where sold=0 and title like '%$title%' and type='$categoria' order by id ASC;");
     }
 
     $response = "";

@@ -24,8 +24,8 @@
                     <div class="col-md-6 px-3">
                         <h2>Add Product</h2>
                     </div>
-                    <div class="col-md-6">
-                        <a href="javascript:history.back()">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <a href="javascript:history.back()" data-bs-toggle="tooltip" data-bs-title="Voltar">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
                             </div>

@@ -21,18 +21,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="products.php?id=<?php echo $user->id?>">
-                                <div class="card text-center p-5 m-3 item d-flex justify-content-center">
-                                <i class="fa-solid fa-boxes-stacked fs-0"></i>
-                                    <p class="fs-2 mt-2">Products</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
                             <a href="category.php?id=<?php echo $user->id?>">
                                 <div class="card text-center p-5 m-3 item d-flex justify-content-center">
                                     <i class="fa-solid fa-sitemap fs-0"></i>
                                     <p class="fs-2 mt-2">Categorias</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="products.php?id=<?php echo $user->id?>">
+                                <div class="card text-center p-5 m-3 item d-flex justify-content-center">
+                                <i class="fa-solid fa-boxes-stacked fs-0"></i>
+                                    <p class="fs-2 mt-2">Produtos</p>
                                 </div>
                             </a>
                         </div>
@@ -41,7 +41,7 @@
                             <a href="users.php?id=<?php echo $user->id?>">
                                 <div class="card text-center p-5 m-3 item d-flex justify-content-center">
                                     <i class="fa-solid fa-users fs-0"></i>
-                                    <p class="fs-2 mt-2">Users</p>
+                                    <p class="fs-2 mt-2">Usuarios</p>
                                 </div>
                             </a>
                         </div>
@@ -50,7 +50,7 @@
                             <a href="settings.php?id=<?php echo $user->id?>">
                                 <div class="card text-center p-5 m-3 item d-flex justify-content-center">
                                     <i class="fa-solid fa-gears fs-0"></i>
-                                    <p class="fs-2 mt-2">Settings Account</p>
+                                    <p class="fs-2 mt-2">Configurações</p>
                                 </div>
                             </a>
                         </div>

@@ -8,6 +8,7 @@ $(document).ready(function(){
         dataType: 'json'
     }).done(function(result){
         $(".table-body").html(result)
+        tolltips();
     });
 });
 $('#search').submit(function(e){
@@ -27,5 +28,6 @@ $('#search').submit(function(e){
     }).done(function(result){
         console.log(result);
         $(".table-body").html(result)
+        tolltips();
     });
 })

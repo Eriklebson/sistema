@@ -28,8 +28,8 @@
                     <div class="col-md-9 px-3">
                         <h2>Editar Fotos do produto <?=$product_edit->title?></h2>
                     </div>
-                    <div class="col-md-3">
-                        <a href="javascript:history.back()">
+                    <div class="col-md-3 d-flex justify-content-end">
+                        <a href="javascript:history.back()" data-bs-toggle="tooltip" data-bs-title="Voltar">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
                             </div>
@@ -42,7 +42,7 @@
                         <input type="text" class="form-control" name="id" id="id" placeholder="id" value="<?=$product_edit->id?>" hidden require>
                     </div>
                     <div class="col-md-12 p-2">
-                        <p>Segure e arraste para mudar a pisição das imagens</p>
+                        <p>Segure e arraste para mudar a posição das imagens</p>
                     </div>
                     <div class="col-md-12 p-2">
                         <div class="row justify-content-center" id="photos">

@@ -6,7 +6,7 @@
     $type = $_POST['type'];
     $title = $_POST['title'];
     $subtitle = $_POST['subtitle'];
-    $price = $_POST['price'];
+    $price = str_replace(',','.', str_replace('.', '', $_POST['price']));
     $description = $_POST['description'];
     
     $result = $conn->query("update products set type='$type', title='$title', subtitle='$subtitle', price='$price', description='$description' where id='$id_product';");

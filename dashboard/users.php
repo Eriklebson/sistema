@@ -27,12 +27,12 @@
                         <h2>Users</h2>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a href="adduser.php?id=<?php echo $user->id?>">
+                        <a href="adduser.php?id=<?php echo $user->id?>" data-bs-toggle="tooltip" data-bs-title="Adicionar Usuario">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-user-plus fs-3 px-3 py-2"></i>
                             </div>
                         </a>
-                        <a href="javascript:history.back()">
+                        <a href="javascript:history.back()" data-bs-toggle="tooltip" data-bs-title="Voltar">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
                             </div>
@@ -40,13 +40,13 @@
                     </div>
                 </div>
                 <div class="card px-4 py-2 mb-3">
-                    <h3>Seach:</h3>
+                    <h3>Procurar:</h3>
                     <div class="row">
                         <form id="search">
                             <div class="input-group my-2">
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <input type="text" id="email" name="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary" type="submit" for="search" id="button-addon2">Search</button>
+                                <button class="btn btn-outline-secondary" type="submit" for="search" id="button-addon2">Procurar</button>
                             </div>
                         </form>
                     </div>

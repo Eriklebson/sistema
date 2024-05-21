@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Setting</title>
+    <title>Configuração da conta</title>
 </head>
 <body>
     <div class="container-fluid">
@@ -20,10 +20,10 @@
             <div class="col-md-9 p-3 overflow-auto" style="max-height: 100vh">
                 <div class="row">
                     <div class="col-md-6 px-3">
-                        <h2>Setting</h2>
+                        <h2>Configuração da conta</h2>
                     </div>
-                    <div class="col-md-6">
-                        <a href="javascript:history.back()">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <a href="javascript:history.back()" data-bs-toggle="tooltip" data-bs-title="Voltar">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
                             </div>
@@ -59,7 +59,7 @@
                                     <input type="password" class="form-control" name="new_password" id="new_password" placeholder="New Password" aria-label="Recipient's username" aria-describedby="button-addon2" disabled>
                                     <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm Password" aria-label="Recipient's username" aria-describedby="button-addon2" disabled>
                                     <input type="checkbox" class="btn-check" id="show_password" autocomplete="off">
-                                    <label class="btn btn-outline-secondary" id="label_show_password" for="show_password"><i class="fa-solid fa-eye"></i></label>
+                                    <label class="btn btn-outline-secondary" id="label_show_password" for="show_password" data-bs-toggle="tooltip" data-bs-title="Mostras/Ocutar"><i class="fa-solid fa-eye"></i></label>
                                 </div>
                             </div>
                             <div class="col-md-12 px-2">

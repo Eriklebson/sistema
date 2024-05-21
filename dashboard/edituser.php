@@ -28,8 +28,8 @@
                     <div class="col-md-6 px-3">
                         <h2>Edit User</h2>
                     </div>
-                    <div class="col-md-6">
-                        <a href="javascript:history.back()">
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <a href="javascript:history.back()" data-bs-toggle="tooltip" data-bs-title="Voltar">
                             <div class="back text-end mb-3 mx-3">
                                 <i class="fa-solid fa-reply fs-3 px-3 py-2"></i>
                             </div>
@@ -58,7 +58,7 @@
                             <div class="col-md-12 p-2">
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="password" id="password" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2" require>
-                                    <button class="btn btn-outline-secondary" id="getPassword" type="button">Generate</button>
+                                    <button class="btn btn-outline-secondary" id="getPassword" type="button">Gerar</button>
                                 </div>
                             </div>
                             <div class="col-md-6 p-2">
